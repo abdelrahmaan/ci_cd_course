@@ -9,10 +9,15 @@ on:
 
 # jobs:
 jobs:
-  exmaple-job: # job name
-    runs-on: ubuntu-latest # runs on container , OS
+  example-job: # job name
+    runs-on: ubuntu-latest # runs on container, OS
     steps:
-      - name: print welcome message
-        run: echo "Welcome to Github Actions"
-    
+      - name: Print a welcome message
+        run: echo "Welcome to GitHub Actions"
+
+      - name: Checkout repo
+        uses: actions/checkout@v4.2.2
+
+      - name: List repo files
+        run: ls -la
       
