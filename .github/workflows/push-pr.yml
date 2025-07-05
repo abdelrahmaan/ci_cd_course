@@ -1,0 +1,27 @@
+on: # trigger
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths: # only trigger if the changes are in the src directory
+      - "src/**"
+
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/**"
+       
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4.2.2
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          echo "Tests completed"
