@@ -1,5 +1,16 @@
 on: 
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose the environment"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
+          - test
 
 jobs:
   build:
